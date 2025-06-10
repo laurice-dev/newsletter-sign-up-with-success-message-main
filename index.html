@@ -31,8 +31,17 @@
           </ul>
           <!-- Sign-up form: start -->
           <form class="card__form" id="form" action="">
-            <label for="email">Email address</label>
-            <input id="email" name="email" value="email@company.com" type="text" />
+            <div class="card__form-email">
+              <label for="email">Email address</label>
+              <small class="card__form--error-email-text--inactive">Valid email required</small>
+            </div>
+            <input
+              class="card__form--error-email-text-area--active"
+              id="email"
+              name="email"
+              value="email@company.com"
+              type="text"
+            />
             <input class="card__button--submit" value="Subscribe to monthly newsletter" type="submit" />
           </form>
           <!-- Sign-up form: end -->
