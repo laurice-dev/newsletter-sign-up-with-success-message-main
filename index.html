@@ -31,17 +31,21 @@
           </ul>
           <!-- Sign-up form: start -->
           <form class="card__form" id="form" action="">
+            <!-- Email Address -->
             <div class="card__form-email">
               <label for="email">Email address</label>
-              <small class="card__form--error-email-text--inactive">Valid email required</small>
+              <!-- Error Small Text -->
+              <small class="card__form--email-error-text--active"></small>
             </div>
+            <!-- Email Address Text Area -->
             <input
-              class="card__form--error-email-text-area--active"
+              class="card__form-email-text-area"
               id="email"
               name="email"
-              value="email@company.com"
+              placeholder="email@company.com"
               type="text"
             />
+            <!-- Button -->
             <input class="card__button--submit" value="Subscribe to monthly newsletter" type="submit" />
           </form>
           <!-- Sign-up form: end -->
@@ -54,14 +58,14 @@
       </div>
 
       <!-- Success message start -->
-      <div class="card__form--success">
+      <div class="card__form--success--inactive">
         <img src="/assets/images/icon-success.svg" alt="" />
         <h2 class="card__title">Thanks for subscribing!</h2>
         <p>
-          A confirmation email has been sent to <strong>ash@loremcompany.com</strong>. Please open it and click the
-          button inside to confirm your subscription.
+          A confirmation email has been sent to <strong><span id="card-success-email"></span></strong>. Please open it
+          and click the button inside to confirm your subscription.
         </p>
-        <button class="card__button--submit" type="button">Dismiss message</button>
+        <button id="reloadButton" class="card__button--submit" type="button">Dismiss message</button>
       </div>
       <!-- Success message end -->
     </div>

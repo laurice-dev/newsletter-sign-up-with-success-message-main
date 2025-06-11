@@ -87,6 +87,10 @@ body {
   }
 }
 
+.card--inactive {
+  display: none;
+}
+
 .card__title {
   font-size: 56px;
   font-size: clamp(40px, 34.3662px + 1.5023vw, 56px);
@@ -107,18 +111,6 @@ body {
 }
 
 .card__form {
-  & input[id="email"] {
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    width: 100%;
-    border: 1px solid var(--clr-neutral-300);
-    border-radius: 0.5rem;
-    font-family: var(--ff-roboto);
-    font-size: 1rem;
-    line-height: 1.5;
-    color: var(--clr-neutral-300);
-  }
   & label {
     font-weight: var(--fw-700);
   }
@@ -128,21 +120,43 @@ body {
   display: flex;
 }
 
-.card__form--error-email-text--inactive {
-  display: none;
-}
-
-.card__form--error-email-text--active {
+.card__form--email-error-text--active {
   margin-left: auto;
   color: var(--clr-primary-600);
 }
 
-.card__form--error-email-text-area--active {
-  border: 10px solid red;
+.card__form-email-text-area {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+
+  border: 1px solid var(--clr-neutral-300);
   border-radius: 0.5rem;
+
   font-family: var(--ff-roboto);
   font-size: 1rem;
   line-height: 1.5;
+  color: var(--clr-neutral-300);
+}
+
+.card__form-email-text-area:focus {
+  outline: none;
+}
+
+.card__form--email-error-text-area--active {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+
+  border: 1px solid var(--clr-primary-600);
+  border-radius: 0.5rem;
+
+  font-family: var(--ff-roboto);
+  font-size: 1rem;
+  line-height: 1.5;
+
   color: var(--clr-primary-600);
   background: #ffe7e6;
 }
@@ -171,7 +185,7 @@ body {
   background-image: linear-gradient(135deg, #ff6a3a 30%, #ff527b);
 }
 
-.card__form--success {
+.card__form--success--active {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -179,7 +193,6 @@ body {
   max-width: 504px;
   border-radius: 2.23rem;
   background: var(--clr-neutral-100);
-  display: none;
 
   & img {
     max-width: 64px;
@@ -188,6 +201,10 @@ body {
   @media (max-width: 375px) {
     height: 90vh;
   }
+}
+
+.card__form--success--inactive {
+  display: none;
 }
 
 .card__form--success > .card__button--submit {
