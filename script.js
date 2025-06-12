@@ -11,18 +11,21 @@ const reloadButton = document.getElementById("reloadButton");
 // Prevent Default Method -- Prevents Form From Submitting -- Only for Errors //
 
 form.addEventListener("submit", (e) => {
-  let messages = [];
+  const emailValue = email.value; // Establishing email value
+  const emailTrimmedValue = email.value.trim(); // Prevents user from validating form with numerous spaces by trimming all blank spaces from email input
 
   if (
-    email.value === "" ||
-    email.value === " " ||
+    emailValue === "" ||
+    emailValue === " " ||
+    emailTrimmedValue === "" ||
     !email.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)
   ) {
-    // Empty or Null Field Value
+    // Error states
     email.classList.add("card__form--email-error-text-area--active");
     emailError.innerHTML = "Valid email required";
     e.preventDefault();
   } else {
+    // Success states
     e.preventDefault();
     card.classList.remove("card");
     card.classList.add("card--inactive");
@@ -33,6 +36,6 @@ form.addEventListener("submit", (e) => {
 });
 
 // Dismiss Button Page Reload
-reloadButton.addEventListener("click", function () {
+reloadButton.addEventListener("click", () => {
   window.location.reload();
 });
